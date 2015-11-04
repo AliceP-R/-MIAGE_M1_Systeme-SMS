@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
@@ -17,6 +17,7 @@ public class Server {
 
     private static final int maxClient = 10;
     private static final ClientThread[] threads = new ClientThread[maxClient];
+    private static final ArrayList<ClientThread> clients = new ArrayList<>();
 
     public static void main(String args[]) {
 
@@ -33,7 +34,10 @@ public class Server {
         while (true) {
             try {
                 clientSocket = serverSocket.accept();
+                ClientThread tmp = new ClientThread(clientSocket, clients);
 
+                tmp.start();
+                        (clients.add(new ClientThread(clientSocket, clients))).start();
                 // on vérifie qu'il reste de la place
                 int i;
                 for (i = 0; i < maxClient; i++) {

@@ -2,6 +2,7 @@ package moi2;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.ArrayList;
 
 /**
  * Created by Alice on 04/11/2015.
@@ -11,8 +12,9 @@ class ClientThread extends Thread {
     private BufferedReader entree = null;
     private PrintStream sortie = null;
     private Socket clientSocket = null;
-    private final ClientThread[] client_connecte;
+    private ClientThread[] client_connecte;
     private int maxClientsCount;
+    private ArrayList<ClientThread> l_client = new ArrayList<>();
 
 
     public String getNom() {
@@ -25,6 +27,13 @@ class ClientThread extends Thread {
         this.clientSocket = clientSocket;
         this.client_connecte = client_connecte;
         maxClientsCount = client_connecte.length;
+    }
+
+    public ClientThread(Socket clientSocket, ArrayList<ClientThread> client)
+    {
+        this.l_client = client;
+        this.clientSocket = clientSocket;
+
     }
 
     /* Pour savoir a qui remettre le message.
@@ -54,7 +63,7 @@ class ClientThread extends Thread {
             id = entree.readLine();
             sortie.println("S:Bienvenue " + id + ".");
             sortie.println("S:Pour quitter la messagerie, S:QUIT.");
-            sortie.println("S:Pour envoyer un message à une autre personne, taper :POUR_QUI:MESSAGE.");
+            sortie.println("S:Pour envoyer un message à une autre personne, taper POUR_QUI:MESSAGE.");
 
             // POur chaque personne déjà connecté, on affiche l'arrivée du nouveau
             for (int i = 0; i < maxClientsCount; i++) {
@@ -77,14 +86,16 @@ class ClientThread extends Thread {
                     // On l'affiche chez chaque client connecté
                     for (int i = 0; i < maxClientsCount; i++)
                     {
-                        if (client_connecte[i] != null &&
-                                (client_connecte[i].remettreMessage(lignesplit[0]) || lignesplit[0].equals("S")))
+                        if (client_connecte[i] != null)
                         {
-                            client_connecte[i].sortie.println(id + ":" + lignesplit[1]);
-                        }
-                        else if(remettreMessage(lignesplit[0]) == false)
-                        {
-                            sortie.println("S:Ce destinataire n'existe pas.");
+                            if (client_connecte[i].remettreMessage(lignesplit[0]))
+                            {
+                                client_connecte[i].sortie.println(id + " dit : " + lignesplit[1]);
+                            }
+                            else if(remettreMessage(lignesplit[0]) == false)
+                            {
+                                sortie.println("S:Ce destinataire n'existe pas.");
+                            }
                         }
                     }
                 }
