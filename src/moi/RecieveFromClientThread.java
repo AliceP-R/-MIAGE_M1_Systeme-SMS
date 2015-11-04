@@ -18,10 +18,14 @@ class RecieveFromClientThread implements Runnable
     }//end constructor
     public void run() {
         try{
+            // liaison sur la sortie du client (InputStream)
             brBufferedReader = new BufferedReader(new InputStreamReader(this.clientSocket.getInputStream()));
 
             String messageString;
+
+            // Tant que le client n'a pas EXIT, on continue à lire
             while(true){
+                System.out.println("while RecieveFromClientThread");
                 while((messageString = brBufferedReader.readLine())!= null){//assign message from client to messageString
                     if(messageString.equals("EXIT"))
                     {

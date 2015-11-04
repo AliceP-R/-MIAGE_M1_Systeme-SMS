@@ -9,7 +9,7 @@ public class Client {
     public static void main(String[] args)
     {
         try {
-            Socket sock = new Socket("localhost",444);
+            Socket sock = new Socket("localhost",483);
             SendThread sendThread = new SendThread(sock);
             Thread thread = new Thread(sendThread);thread.start();
             RecieveThread recieveThread = new RecieveThread(sock);

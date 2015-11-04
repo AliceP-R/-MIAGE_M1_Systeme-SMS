@@ -11,7 +11,7 @@ import java.net.Socket;
 class SendThread implements Runnable
 {
     Socket sock=null;
-    PrintWriter print=null;
+    PrintWriter sortie=null;
     BufferedReader brinput=null;
 
     public SendThread(Socket sock)
@@ -22,15 +22,18 @@ class SendThread implements Runnable
         try{
             if(sock.isConnected())
             {
-                System.out.println("Client connected to "+sock.getInetAddress() + " on port "+sock.getPort());
-                this.print = new PrintWriter(sock.getOutputStream(), true);
+                System.out.println("Client connect\u00e9 sur la socket " +sock.getInetAddress() + " sur le port "+sock.getPort());
+                // la sortie est sur l'output Stream de la socket
+                this.sortie = new PrintWriter(sock.getOutputStream(), true);
                 while(true){
-                    System.out.println("Type your message to send to server..type 'EXIT' to exit");
+                    System.out.println("Taper votre message sous la forme de  :POUR_QUI:DE_QUI:MESSAGE: ou EXIT pour quitter");
+                    // Lecture du message
                     brinput = new BufferedReader(new InputStreamReader(System.in));
                     String msgtoServerString=null;
                     msgtoServerString = brinput.readLine();
-                    this.print.println(msgtoServerString);
-                    this.print.flush();
+                    // Envoie du message au serveur
+                    this.sortie.println(msgtoServerString);
+                    this.sortie.flush();
 
                     if(msgtoServerString.equals("EXIT"))
                         break;
