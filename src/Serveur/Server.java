@@ -1,4 +1,6 @@
-package moi2;
+package Serveur;
+
+import Client.ThreadPourClient;
 
 import java.io.IOException;
 import java.io.PrintStream;

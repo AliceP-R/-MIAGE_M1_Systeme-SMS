@@ -1,4 +1,4 @@
-package moi2;
+package Client;
 
 import java.io.*;
 import java.net.Socket;
@@ -6,7 +6,7 @@ import java.net.Socket;
 /**
  * Created by Alice on 04/11/2015.
  */
-class ThreadPourClient extends Thread {
+public class ThreadPourClient extends Thread {
 
     private DataInputStream entree = null;
     private PrintStream sortie = null;

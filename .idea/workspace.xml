@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4363bdfe-edf7-4912-8e06-848d02e6bb94" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\Doc\Détails.docx" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\Doc\~$étails.docx" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\out\production\SMS\moi2\ClientThread.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\src\prof\FentereSaisie.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\src\prof\SimpleFenetre.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\src\prof\testSaisie.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\src\moi2\ClientThread.java" afterPath="$PROJECT_DIR$/src/moi2/ThreadPourClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SMS/moi2/Server.class" afterPath="$PROJECT_DIR$/out/production/SMS/moi2/Server.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moi2/Server.java" afterPath="$PROJECT_DIR$/src/moi2/Server.java" />
+      <change type="DELETED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\out\production\SMS\moi2\Client.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\out\production\SMS\moi2\Server.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\out\production\SMS\moi2\ThreadPourClient.class" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\src\moi2\Client.java" afterPath="$PROJECT_DIR$/src/Client/Client.java" />
+      <change type="MOVED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\src\moi2\Server.java" afterPath="$PROJECT_DIR$/src/Serveur/Server.java" />
+      <change type="MOVED" beforePath="C:\Users\Alice\Documents\M1\Système et Réseau\SMS\src\moi2\ThreadPourClient.java" afterPath="$PROJECT_DIR$/src/Client/ThreadPourClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SMS.iws" />
@@ -34,33 +31,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/moi2/Server.java">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Serveur/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6572935">
-              <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="72" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadPourClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/moi2/ThreadPourClient.java">
+      <file leaf-file-name="ThreadPourClient.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Client/ThreadPourClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="3.704745">
               <caret line="159" column="13" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="13" />
               <folding>
                 <element signature="n#!!doc;n#ThreadPourClient#0;n#ThreadPourClient#0" expanded="false" />
-                <element signature="e#661#662#0" expanded="true" />
-                <element signature="e#686#687#0" expanded="true" />
-                <element signature="e#3244#3268#0" expanded="false" />
+                <element signature="e#670#671#0" expanded="true" />
+                <element signature="e#695#696#0" expanded="true" />
+                <element signature="e#3253#3277#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/moi2/Client.java">
+        <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
@@ -105,6 +102,7 @@
         <option value="$PROJECT_DIR$/src/moi2/ClientThread.java" />
         <option value="$PROJECT_DIR$/src/moi2/ThreadPourClient.java" />
         <option value="$PROJECT_DIR$/src/moi2/Server.java" />
+        <option value="$PROJECT_DIR$/src/Serveur/Server.java" />
       </list>
     </option>
   </component>
@@ -175,7 +173,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="moi2" />
+              <option name="myItemId" value="Serveur" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -193,7 +209,7 @@
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Application.Client (1)">
+  <component name="RunManager" selected="Application.Client">
     <configuration default="false" name="testSaisie" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="prof.testSaisie" />
@@ -249,14 +265,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="Server (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="moi2.*" />
+          <option name="PATTERN" value="Serveur.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="moi2.Server" />
+      <option name="MAIN_CLASS_NAME" value="Serveur.Server" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -269,14 +285,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="moi2.*" />
+          <option name="PATTERN" value="Serveur.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="moi2.Client" />
+      <option name="MAIN_CLASS_NAME" value="Client.Client" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -542,13 +558,13 @@
       <item index="0" class="java.lang.String" itemvalue="Application.testSaisie" />
       <item index="1" class="java.lang.String" itemvalue="Application.Server" />
       <item index="2" class="java.lang.String" itemvalue="Application.Client" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Server (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Client (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Server" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Client" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Client (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Server (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Client" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Server" />
         <item index="2" class="java.lang.String" itemvalue="Application.Client" />
         <item index="3" class="java.lang.String" itemvalue="Application.Server" />
         <item index="4" class="java.lang.String" itemvalue="Application.testSaisie" />
@@ -573,12 +589,12 @@
       <workItem from="1446709672301" duration="264000" />
       <workItem from="1446729621745" duration="818000" />
       <workItem from="1446795528390" duration="706000" />
-      <workItem from="1446804115295" duration="11097000" />
+      <workItem from="1446804115295" duration="11514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30103000" />
+    <option name="totallyTimeSpent" value="30520000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -591,7 +607,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="728" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998326" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -632,7 +648,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -641,7 +657,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/moi2/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/Serveur/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="64" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
@@ -649,20 +665,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/ThreadPourClient.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/ThreadPourClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding>
             <element signature="n#!!doc;n#ThreadPourClient#0;n#ThreadPourClient#0" expanded="false" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#3244#3268#0" expanded="false" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#3253#3277#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -672,7 +688,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/Serveur/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -680,20 +696,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/ThreadPourClient.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/ThreadPourClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding>
             <element signature="n#!!doc;n#ThreadPourClient#0;n#ThreadPourClient#0" expanded="false" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#3244#3268#0" expanded="false" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#3253#3277#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
@@ -703,7 +719,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/Serveur/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -711,20 +727,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/ThreadPourClient.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/ThreadPourClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc;n#ThreadPourClient#0;n#ThreadPourClient#0" expanded="false" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#3244#3268#0" expanded="false" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#3253#3277#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
@@ -734,7 +750,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/Serveur/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -742,20 +758,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/ThreadPourClient.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/ThreadPourClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc;n#ThreadPourClient#0;n#ThreadPourClient#0" expanded="false" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#3244#3268#0" expanded="false" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#3253#3277#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
@@ -779,7 +795,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
@@ -789,24 +805,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/ThreadPourClient.java">
+    <entry file="file://$PROJECT_DIR$/src/Serveur/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="159" column="13" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc;n#ThreadPourClient#0;n#ThreadPourClient#0" expanded="false" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#3244#3268#0" expanded="false" />
-          </folding>
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moi2/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/ThreadPourClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6572935">
-          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="72" />
-          <folding />
+        <state vertical-scroll-proportion="3.704745">
+          <caret line="159" column="13" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!doc;n#ThreadPourClient#0;n#ThreadPourClient#0" expanded="false" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#3253#3277#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-package moi2;
+package Client;
 
 /**
  * Created by Alice on 04/11/2015.
