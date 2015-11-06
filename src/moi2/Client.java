@@ -25,45 +25,29 @@ public class Client implements Runnable {
         int portNumber = 483;
         String host = "localhost";
 
-        if (args.length < 2) {
-            System.out
-                    .println("Usage: java MultiThreadChatClient <host> <portNumber>\n"
-                            + "Now using host=" + host + ", portNumber=" + portNumber);
-        } else {
-            host = args[0];
-            portNumber = Integer.valueOf(args[1]).intValue();
-        }
-
-    /*
-     * Open a socket on a given host and port. Open input and output streams.
-     */
+    /* On ouvre la socket et on met en place l'émission et la réception */
         try {
             clientSocket = new Socket(host, portNumber);
             lecture = new BufferedReader(new InputStreamReader(System.in));
             sortie = new PrintStream(clientSocket.getOutputStream());
             entree = new DataInputStream(clientSocket.getInputStream());
         } catch (UnknownHostException e) {
-            System.err.println("Don't know about host " + host);
+            System.err.println("host inconnu");
         } catch (IOException e) {
-            System.err.println("Couldn't get I/O for the connection to the host "
-                    + host);
+            System.err.println("Connexion impossible");
         }
 
-    /*
-     * If everything has been initialized then we want to write some data to the
-     * socket we have opened a connection to on the port portNumber.
-     */
         if (clientSocket != null && sortie != null && entree != null) {
             try {
 
-        /* Create a thread to read from the server. */
+                // Création du thread de lecture depuis le serveur
                 new Thread(new Client()).start();
+                // Tant que la connexion n'est pas fermée, on lit
                 while (!closed) {
                     sortie.println(lecture.readLine().trim());
                 }
-        /*
-         * Close the output stream, close the input stream, close the socket.
-         */
+
+                // Quand la connexion se ferme, on ferme tout
                 sortie.close();
                 entree.close();
                 clientSocket.close();
@@ -73,21 +57,13 @@ public class Client implements Runnable {
         }
     }
 
-    /*
-     * Create a thread to read from the server. (non-Javadoc)
-     *
-     * @see java.lang.Runnable#run()
-     */
     public void run() {
-    /*
-     * Keep on reading from the socket till we receive "Bye" from the
-     * server. Once we received that then we want to break.
-     */
         String responseLine;
         try {
+            // On continue à lire tant que "Quit" n'est pas reçu
             while ((responseLine = entree.readLine()) != null) {
                 System.out.println(responseLine);
-                if (responseLine.indexOf("*** Bye") != -1)
+                if (responseLine.indexOf("Quit") != -1)
                     break;
             }
             closed = true;
