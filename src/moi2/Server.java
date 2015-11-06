@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Hashtable;
 
 /**
  * Created by Alice on 04/11/2015.
@@ -16,7 +14,7 @@ public class Server {
     private static Socket clientSocket = null;
 
     private static final int maxClient = 10;
-    private static final ClientThread[] threads = new ClientThread[maxClient];
+    private static final ThreadPourClient[] threads = new ThreadPourClient[maxClient];
 
     public static void main(String args[]) {
 
@@ -37,7 +35,7 @@ public class Server {
                 int i;
                 for (i = 0; i < maxClient; i++) {
                     if (threads[i] == null) {
-                        (threads[i] = new ClientThread(clientSocket, threads)).start();
+                        (threads[i] = new ThreadPourClient(clientSocket, threads)).start();
                         break;
                     }
                 }

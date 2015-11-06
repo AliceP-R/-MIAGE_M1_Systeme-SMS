@@ -6,17 +6,17 @@ import java.net.Socket;
 /**
  * Created by Alice on 04/11/2015.
  */
-class ClientThread extends Thread {
+class ThreadPourClient extends Thread {
 
     private DataInputStream entree = null;
     private PrintStream sortie = null;
     private Socket clientSocket = null;
-    private ClientThread[] client_connecte;
+    private ThreadPourClient[] client_connecte;
     private int maxClient;
     private String id;
 
     //region Contructeur et Accesseurs
-    public ClientThread(Socket clientSocket, ClientThread[] client_connecte) {
+    public ThreadPourClient(Socket clientSocket, ThreadPourClient[] client_connecte) {
         this.clientSocket = clientSocket;
         this.client_connecte = client_connecte;
         maxClient = client_connecte.length;
@@ -43,7 +43,7 @@ class ClientThread extends Thread {
 
     public void run() {
         int maxClientsCount = this.maxClient;
-        ClientThread[] client_connecte = this.client_connecte;
+        ThreadPourClient[] client_connecte = this.client_connecte;
         boolean enligne=true;
 
         try {
@@ -70,7 +70,7 @@ class ClientThread extends Thread {
                     }
                 }
                 if(inscriptionIncorrect)
-                    System.out.println("Cette identifiant est d\u00e9j\u00e0 utilis\u00e9");
+                    sortie.println("Cette identifiant est d\u00e9j\u00e0 utilis\u00e9");
 
             }while(inscriptionIncorrect);
             //endregion
@@ -85,7 +85,7 @@ class ClientThread extends Thread {
             for (int i = 0; i < maxClientsCount; i++)
             {
                 if (client_connecte[i] != null && client_connecte[i] != this) {
-                    client_connecte[i].sortie.println("S:" + id + " viens de se connecter:");
+                    client_connecte[i].sortie.println("S:" + id + " viens de se connecter");
                 }
             }
 
@@ -126,29 +126,34 @@ class ClientThread extends Thread {
                    lignesplit[1] = le message
                  */
                 String[] lignesplit = ligne.split(":");
+                boolean remiseMessage = false;
 
-                if(enligne && (pourServeur == false))
+                if((lignesplit.length == 1) || ((lignesplit.length>1)&&lignesplit[0].equals("")))
                 {
+                    sortie.println("S:Mauvaise synthaxe !");
+                    sortie.println("S:Pour envoyer un message à une autre personne, taper POUR_QUI:MESSAGE");
+                }
+
+                if(enligne && (pourServeur == false) && (remiseMessage == false))
+                {
+
                     // On l'affiche chez chaque client connecté
                     for (int i = 0; i < maxClientsCount; i++)
                     {
                         if (client_connecte[i] != null)
                         {
-                            /*
-                            ATTENTION, DANS CETTE PARTIE DE CODE, INCOMPREHENSION :
-                            SI LES 2 IF N'ONT PAS LA MÊME CONDITION, LE MESSAGE EST REMIS A LA BONNE PERSONNE
-                            MAIS LE MESSAGE "CE DESTINATAIRE..." EST EGALEMENT AFFICHE
-                             */
-                            boolean remiseMessage = client_connecte[i].remettreMessage(lignesplit[0]);
-                            if (remiseMessage)
+                            if ((client_connecte[i].getNom()).equals(lignesplit[0]))
                             {
                                 client_connecte[i].sortie.println(id + " dit : " + lignesplit[1]);
-                            }
-                            else if(remiseMessage)
-                            {
-                                sortie.println("S:Ce destinataire n'existe pas ou n'est pas connecté.");
+                                remiseMessage = true;
+
                             }
                         }
+                    }
+                    //Si le message n'a pas été remis
+                    if(remiseMessage == false)
+                    {
+                        sortie.println("S:Ce destinataire n'existe pas ou n'est pas connecté.");
                     }
                 }
                 //endregion
@@ -162,6 +167,7 @@ class ClientThread extends Thread {
             }
             // le serveur dit au revoir !
             sortie.println("S: Vous \u00eates d\u00e9connect\u00e9");
+            sortie.println("Quit");
 
             // On lib&egrave;re le thread pour qu'il puisse &ecirc;tre r&eacute;utilis&eacute;.
             for (int i = 0; i < maxClientsCount; i++) {
